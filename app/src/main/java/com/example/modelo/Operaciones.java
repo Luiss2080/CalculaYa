@@ -10,7 +10,7 @@ public class Operaciones {
         this.valor2 = valor2;
     }
 
-    public double sumar() {
+    public double sumar()
         return this.valor1 + this.valor2;
     }
 
