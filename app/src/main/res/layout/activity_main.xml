@@ -15,7 +15,6 @@
 
         <com.google.android.material.appbar.MaterialToolbar
             android:id="@+id/toolbar"
-            style="@style/Widget.Material3.Toolbar.Primary"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
             app:title="Calculadora"
@@ -97,7 +96,6 @@
 
                 <com.google.android.material.button.MaterialButton
                     android:id="@+id/btnSumar"
-                    style="@style/Widget.Material3.Button.Filled"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_columnWeight="1"
@@ -109,7 +107,6 @@
 
                 <com.google.android.material.button.MaterialButton
                     android:id="@+id/btnRestar"
-                    style="@style/Widget.Material3.Button.Filled"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_columnWeight="1"
@@ -121,7 +118,6 @@
 
                 <com.google.android.material.button.MaterialButton
                     android:id="@+id/btnMultiplicar"
-                    style="@style/Widget.Material3.Button.Filled"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_columnWeight="1"
@@ -133,7 +129,6 @@
 
                 <com.google.android.material.button.MaterialButton
                     android:id="@+id/btnDividir"
-                    style="@style/Widget.Material3.Button.Filled"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_columnWeight="1"
@@ -145,7 +140,6 @@
 
                 <com.google.android.material.button.MaterialButton
                     android:id="@+id/btnModulo"
-                    style="@style/Widget.Material3.Button.Filled"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_columnWeight="1"
@@ -157,7 +151,6 @@
 
                 <com.google.android.material.button.MaterialButton
                     android:id="@+id/btnPotencia"
-                    style="@style/Widget.Material3.Button.Filled"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_columnWeight="1"
