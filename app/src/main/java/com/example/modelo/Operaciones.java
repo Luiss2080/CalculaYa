@@ -2,15 +2,15 @@ package com.example.modelo;
 
 public class Operaciones {
 
-    private double valor1;
-    private double valor2;
+    private final double valor1;
+    private final double valor2;
 
     public Operaciones(double valor1, double valor2) {
         this.valor1 = valor1;
         this.valor2 = valor2;
     }
 
-    public double sumar()
+    public double sumar() {
         return this.valor1 + this.valor2;
     }
 
