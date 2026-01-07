@@ -1,4 +1,4 @@
--package com.example.vista;
+package com.example.vista;
 
 import android.os.Bundle;
 

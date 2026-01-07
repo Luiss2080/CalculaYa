@@ -9,83 +9,159 @@
 
     <TextView
         android:id="@+id/txtviewTitulo"
-        android:layout_width="168dp"
-        android:layout_height="28dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
         android:text="CALCULADORA BASICA"
-        tools:layout_editor_absoluteX="121dp"
-        tools:layout_editor_absoluteY="16dp" />
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/editValor1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="numberDecimal"
-        tools:layout_editor_absoluteX="165dp"
-        tools:layout_editor_absoluteY="65dp" />
-
-    <TextView
-        android:id="@+id/textView2"
         android:layout_width="0dp"
-        android:layout_height="21dp"
-        android:text="VALOR 1:"
-        tools:layout_editor_absoluteX="63dp"
-        tools:layout_editor_absoluteY="77dp" />
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="24dp"
+        android:ems="10"
+        android:hint="Valor 1"
+        android:inputType="numberDecimal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtviewTitulo" />
 
     <EditText
         android:id="@+id/editValor2"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="24dp"
         android:ems="10"
+        android:hint="Valor 2"
         android:inputType="numberDecimal"
-        tools:layout_editor_absoluteX="165dp"
-        tools:layout_editor_absoluteY="121dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editValor1" />
 
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="VALOR 2:"
-        tools:layout_editor_absoluteX="63dp"
-        tools:layout_editor_absoluteY="133dp" />
-
-    <Button
-        android:id="@+id/btnDividir"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="/"
-        tools:layout_editor_absoluteX="316dp"
-        tools:layout_editor_absoluteY="196dp" />
-
-    <Button
-        android:id="@+id/btnMultiplicar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="*"
-        tools:layout_editor_absoluteX="216dp"
-        tools:layout_editor_absoluteY="196dp" />
-
+    <!-- Button Row 1 -->
     <Button
         android:id="@+id/btnSumar"
-        android:layout_width="wrap_content"
+        style="?android:attr/buttonStyle"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
         android:text="+"
-        tools:layout_editor_absoluteX="5dp"
-        tools:layout_editor_absoluteY="196dp" />
+        android:textSize="18sp"
+        app:layout_constraintEnd_toStartOf="@+id/btnRestar"
+        app:layout_constraintHorizontal_chainStyle="spread"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editValor2"
+        app:layout_constraintWidth_default="spread" />
 
     <Button
         android:id="@+id/btnRestar"
-        android:layout_width="wrap_content"
+        style="?android:attr/buttonStyle"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="-"
-        tools:layout_editor_absoluteX="109dp"
-        tools:layout_editor_absoluteY="196dp" />
+        android:textSize="18sp"
+        app:layout_constraintEnd_toStartOf="@+id/btnMultiplicar"
+        app:layout_constraintStart_toEndOf="@+id/btnSumar"
+        app:layout_constraintTop_toTopOf="@+id/btnSumar"
+        app:layout_constraintWidth_default="spread" />
+
+    <Button
+        android:id="@+id/btnMultiplicar"
+        style="?android:attr/buttonStyle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="*"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toStartOf="@+id/btnDividir"
+        app:layout_constraintStart_toEndOf="@+id/btnRestar"
+        app:layout_constraintTop_toTopOf="@+id/btnRestar"
+        app:layout_constraintWidth_default="spread" />
+
+    <Button
+        android:id="@+id/btnDividir"
+        style="?android:attr/buttonStyle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="/"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/btnMultiplicar"
+        app:layout_constraintTop_toTopOf="@+id/btnMultiplicar"
+        app:layout_constraintWidth_default="spread" />
+
+    <!-- Button Row 2 -->
+    <Button
+        android:id="@+id/btnModulo"
+        style="?android:attr/buttonStyle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="%"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toStartOf="@+id/btnPotencia"
+        app:layout_constraintHorizontal_chainStyle="spread"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnSumar"
+        app:layout_constraintWidth_default="spread" />
+
+    <Button
+        android:id="@+id/btnPotencia"
+        style="?android:attr/buttonStyle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="^"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toStartOf="@+id/btnClear"
+        app:layout_constraintStart_toEndOf="@+id/btnModulo"
+        app:layout_constraintTop_toTopOf="@+id/btnModulo"
+        app:layout_constraintWidth_default="spread" />
+
+    <Button
+        android:id="@+id/btnClear"
+        style="?android:attr/buttonStyle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_columnSpan="2"
+        android:text="Limpiar"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/btnPotencia"
+        app:layout_constraintTop_toTopOf="@+id/btnPotencia"
+        app:layout_constraintWidth_default="spread" />
+
+
+    <TextView
+        android:id="@+id/labelResultado"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="32dp"
+        android:text="Resultado:"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnModulo" />
 
     <TextView
         android:id="@+id/txtviewResult"
-        android:layout_width="341dp"
-        android:layout_height="34dp"
-        tools:layout_editor_absoluteX="34dp"
-        tools:layout_editor_absoluteY="276dp" />
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="24dp"
+        android:text=""
+        android:textSize="24sp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/labelResultado"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/labelResultado"
+        tools:text="12345.67" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
