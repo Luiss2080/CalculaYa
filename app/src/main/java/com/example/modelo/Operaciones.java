@@ -2,8 +2,8 @@ package com.example.modelo;
 
 public class Operaciones {
 
-    public double valor1;
-    public double valor2;
+    private double valor1;
+    private double valor2;
 
     public Operaciones(double valor1, double valor2) {
         this.valor1 = valor1;
@@ -23,14 +23,14 @@ public class Operaciones {
     }
 
     public double dividir() {
-        if (valor2 != 0) {
+        if (this.valor2 != 0) {
             return this.valor1 / this.valor2;
         }
         return Double.NaN; // Not-a-Number para indicar error
     }
 
     public double modulo() {
-        if (valor2 != 0) {
+        if (this.valor2 != 0) {
             return this.valor1 % this.valor2;
         }
         return Double.NaN; // Not-a-Number para indicar error
