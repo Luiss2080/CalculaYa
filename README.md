@@ -109,8 +109,6 @@ Hay **15** pruebas JUnit 4 (`OperacionesTest`) sobre la lógica aritmética y el
 - Resultados con 15 cifras significativas; magnitudes muy grandes o pequeñas usan notación científica.
 - Sin pruebas de interfaz ni instrumentadas reales (solo la plantilla).
 - Textos en español escritos directamente en el código, sin internacionalización.
-- **CI:** el workflow solo se dispara en `push` a la rama `main` y en pull requests, pero la rama por
-  defecto es `master`; los push directos a `master` no lanzan el CI.
 
 ## 📄 Licencia
 
