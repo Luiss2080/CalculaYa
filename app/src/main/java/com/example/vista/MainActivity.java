@@ -7,13 +7,19 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.modelo.FormateadorResultado;
 import com.example.modelo.Operaciones;
 import com.google.android.material.appbar.MaterialToolbar;
 import com.google.android.material.textfield.TextInputEditText;
 
+import java.math.BigDecimal;
+
 public class MainActivity extends AppCompatActivity {
+
+    private static final String KEY_RESULTADO = "resultado";
 
     private TextInputEditText editValor1, editValor2;
     private TextView txtviewResult;
@@ -47,11 +53,21 @@ public class MainActivity extends AppCompatActivity {
         btnDividir.setOnClickListener(v -> calcular(Operacion.DIVISION));
         btnModulo.setOnClickListener(v -> calcular(Operacion.MODULO));
         btnPotencia.setOnClickListener(v -> calcular(Operacion.POTENCIA));
+        if (savedInstanceState != null) {
+            txtviewResult.setText(savedInstanceState.getString(KEY_RESULTADO, ""));
+        }
         btnClear.setOnClickListener(v -> {
             editValor1.setText("");
             editValor2.setText("");
             txtviewResult.setText("");
         });
+    }
+
+    @Override
+    protected void onSaveInstanceState(@NonNull Bundle outState) {
+        super.onSaveInstanceState(outState);
+        // Los EditText con id conservan su texto solos; el TextView de resultado no.
+        outState.putString(KEY_RESULTADO, txtviewResult.getText().toString());
     }
 
     private void calcular(Operacion operacion) {
@@ -64,11 +80,8 @@ public class MainActivity extends AppCompatActivity {
         }
 
         try {
-            double valor1 = Double.parseDouble(valor1Str);
-            double valor2 = Double.parseDouble(valor2Str);
-
-            Operaciones op = new Operaciones(valor1, valor2);
-            double resultado = 0;
+            Operaciones op = new Operaciones(new BigDecimal(valor1Str), new BigDecimal(valor2Str));
+            BigDecimal resultado;
 
             switch (operacion) {
                 case SUMA:
@@ -89,18 +102,14 @@ public class MainActivity extends AppCompatActivity {
                 case POTENCIA:
                     resultado = op.potencia();
                     break;
+                default:
+                    throw new IllegalStateException("Operación desconocida: " + operacion);
             }
 
-            if (Double.isNaN(resultado)) {
-                txtviewResult.setText("Error");
-            } else {
-                // Formatear para no mostrar .0 en enteros
-                if (resultado == (long) resultado) {
-                    txtviewResult.setText(String.format("%d", (long) resultado));
-                } else {
-                    txtviewResult.setText(String.format("%s", resultado));
-                }
-            }
+            txtviewResult.setText(FormateadorResultado.formatear(resultado));
+        } catch (ArithmeticException e) {
+            // División/módulo por cero, potencia indefinida o fuera de rango
+            txtviewResult.setText("Error");
         } catch (NumberFormatException e) {
             Toast.makeText(this, "Entrada inválida. Por favor, ingrese números válidos.", Toast.LENGTH_SHORT).show();
         }
