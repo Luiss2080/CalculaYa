@@ -13,3 +13,21 @@
 .externalNativeBuild
 .cxx
 local.properties
+
+# Salidas de compilación y artefactos
+build/
+*.apk
+*.aab
+*.class
+*.log
+
+# IDE (Android Studio / IntelliJ): configuración por usuario, no se versiona
+.idea/
+*.iml
+.vscode/
+.classpath
+.project
+.settings/
+
+# Sistema operativo
+Thumbs.db
