@@ -1,4 +1,4 @@
-# <<NOMBRE>>
+# CalculaYa
 
 Calculadora para Android escrita en Java. Recibe **dos operandos** y aplica
 una operación a la vez: suma, resta, multiplicación, división, módulo y
