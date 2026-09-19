@@ -1,0 +1,10 @@
+{
+  "spec": "calculadora_basica.md",
+  "locked_files": [
+    "app/src/main/java/com/example/modelo/Operaciones.java",
+    "app/src/main/java/com/example/modelo/FormateadorResultado.java"
+  ],
+  "test_files": [
+    "app/src/test/java/com/example/modelo/OperacionesTest.java"
+  ]
+}
