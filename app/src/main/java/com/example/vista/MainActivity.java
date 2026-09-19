@@ -79,6 +79,13 @@ public class MainActivity extends AppCompatActivity {
             return;
         }
 
+        // Validación explícita para evitar que el motor reciba símbolos solitarios
+        if (valor1Str.equals("-") || valor1Str.equals(".") || valor1Str.equals("-.") ||
+            valor2Str.equals("-") || valor2Str.equals(".") || valor2Str.equals("-.")) {
+            Toast.makeText(this, "Entrada inválida. Por favor, ingrese números completos.", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
         try {
             Operaciones op = new Operaciones(new BigDecimal(valor1Str), new BigDecimal(valor2Str));
             BigDecimal resultado;
